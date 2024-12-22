@@ -25,7 +25,7 @@ class ProductUpdateViews(UpdateView):
     form_class = ProductForm
     success_url = reverse_lazy('product_list')
 
-class ProductDeleteViews(DetailView):
+class ProductDeleteViews(DeletelView):
     queryset = Product.objects.all()
     template_name = 'product_delete.html'
     success_url = reverse_lazy('product_list')
