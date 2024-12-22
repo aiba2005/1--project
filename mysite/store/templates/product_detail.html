@@ -1,0 +1,20 @@
+<p>Название: {{product.product_name}}</p>
+<p>Категория:{{product.category}}</p>
+<p>Цена:{{product.price}}</p>
+{% if product.type %}
+    <p>Б/У</p>
+{% else %}
+    <p>Новый</p>
+{% endif %}
+<p>Описание:{{product.description}}</p>
+<p>Дата/Время/:{{product.created_date}}</p>
+
+
+{% if product.image %}
+    <p><img src="{{ product.image.url}}"></p>
+{% else %}
+    <p>NO IMAGE</p>
+{% endif %}
+
+<button><a href="{% url 'product_update' product.pk %}">UPDATE</a></button>
+<button><a href="{% url 'product_delete' product.pk %}">DELETE</a></button>
